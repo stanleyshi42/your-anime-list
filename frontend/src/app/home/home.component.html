@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p>todo search bar</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <h1>Currently Airing</h1>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngIf="airingAnime.length == 0">
+      <div class="row">
+        <div class="col text-center">
+          <img src="loading.gif" style="width: 48px; height: 48px" />
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let anime of airingAnime; let i = index">
+      <div *ngIf="anime.airing == true" class="col-2 py-2">
+        <app-anime-card [anime]="anime"></app-anime-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
