@@ -1,20 +1,37 @@
 <div class="card border-info" style="max-width: 18rem">
-  <img class="card-img-top" src="{{ anime.images.jpg.image_url }}" />
-  <div class="card-body">
-    <h5 class="card-title">
-      <ng-container *ngIf="anime.title_english">
-        {{ anime.title_english }}
-      </ng-container>
-      <ng-container *ngIf="!anime.title_english">
-        {{ anime.title }}
-      </ng-container>
-    </h5>
+  <a [routerLink]="'/anime/' + anime.mal_id">
+    <img class="card-img-top" src="{{ anime.images.jpg.image_url }}" />
+  </a>
 
-    <h5 class="card-text">
-      <ng-container *ngIf="anime.episodes">
-        {{ anime.episodes }} Episodes
-      </ng-container>
-      <ng-container *ngIf="!anime.episodes"> ? Episodes </ng-container>
-    </h5>
+  <div class="card-body">
+    <ng-container *ngIf="title == true">
+      <h5 class="card-title">
+        <ng-container *ngIf="anime.title_english">
+          {{ anime.title_english }}
+        </ng-container>
+        <ng-container *ngIf="!anime.title_english">
+          {{ anime.title }}
+        </ng-container>
+      </h5>
+    </ng-container>
+
+    <ng-container *ngIf="episodes == true">
+      <div class="card-text">
+        <ng-container *ngIf="anime.episodes">
+          {{ anime.episodes }} Episodes
+        </ng-container>
+        <ng-container *ngIf="!anime.episodes"> ? Episodes </ng-container>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="score == true">
+      <div class="card-text">{{ anime.score }}/10</div>
+    </ng-container>
+
+    <ng-container *ngIf="aired_from == true">
+      <div class="card-text">
+        {{ anime.aired.from | date : "MMM dd, yyyy" }}
+      </div>
+    </ng-container>
   </div>
 </div>

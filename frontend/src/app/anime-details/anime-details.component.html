@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <!-- Left column -->
+    <div class="col-3">
+      <div class="row">
+        <img
+          src="{{ anime.images.webp.large_image_url }}"
+          class="img-fluid p-0"
+        />
+      </div>
+      <div class="row">Type: {{ anime.type }}</div>
+      <div class="row">Episodes: {{ anime.episodes }}</div>
+      <div class="row">Status: {{ anime.status }}</div>
+      <div class="row">
+        Aired:
+        <ng-container *ngIf="anime.aired.from">
+          {{ anime.aired.from | date : "MMM dd, yyyy" }}
+        </ng-container>
+        <ng-container *ngIf="!anime.aired.from"> ? </ng-container>
+        to
+        <ng-container *ngIf="anime.aired.to">
+          Aired: {{ anime.aired.to | date : "MMM dd, yyyy" }}
+        </ng-container>
+        <ng-container *ngIf="!anime.aired.to"> ? </ng-container>
+      </div>
+      <div class="row">Duration: {{ anime.duration }}</div>
+      <div class="row">Rating: {{ anime.rating }}</div>
+    </div>
+
+    <!-- Right column -->
+    <div class="col-9">
+      <div class="row">
+        <h1>{{ anime.title_english }}</h1>
+      </div>
+
+      <div class="row">
+        <span style="white-space: pre-line; font-size: 15px">
+          {{ anime.synopsis }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,7 +17,6 @@ export class HomeComponent {
   getAiringAnime() {
     this.jikanService.getAiring().subscribe((data) => {
       this.airingAnime = data.data;
-      console.log(this.airingAnime);
     });
   }
 }

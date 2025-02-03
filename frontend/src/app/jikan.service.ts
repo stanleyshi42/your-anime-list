@@ -17,7 +17,7 @@ export class JikanService {
 
   // Get list of top anime
   getTop(): Observable<any> {
-    return this.http.get<any>(this.uri + 'top/anime');
+    return this.http.get<any>(this.uri + 'top/anime?sfw');
   }
 
   // Get list of currently airing anime
@@ -25,11 +25,12 @@ export class JikanService {
     return this.http.get<any>(this.uri + 'seasons/now?sfw');
   }
 
+  // Get list of currently upcoming anime
   getUpcoming(): Observable<any> {
     return this.http.get<any>(this.uri + 'seasons/upcoming?sfw');
   }
 
-  searchByName(name: string): Observable<any> {
-    return this.http.get<any>(this.uri + 'anime?q=' + name);
+  getSearch(query: string): Observable<any> {
+    return this.http.get<any>(this.uri + 'anime?sfw&?q=' + query);
   }
 }

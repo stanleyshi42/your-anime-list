@@ -9,22 +9,24 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AnimeListComponent } from './anime-list/anime-list.component';
 import { TopAnimeComponent } from './top-anime/top-anime.component';
 import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { AnimeCardComponent } from './anime-card/anime-card.component';
+import { UpcomingAnimeComponent } from './upcoming-anime/upcoming-anime.component';
+import { AnimeDetailsComponent } from './anime-details/anime-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    AnimeListComponent,
     TopAnimeComponent,
     AnimeCardComponent,
+    UpcomingAnimeComponent,
+    AnimeDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideHttpClient(withInterceptorsFromDi())],

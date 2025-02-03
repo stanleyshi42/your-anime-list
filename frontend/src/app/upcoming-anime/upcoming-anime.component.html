@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
-      <h1>Top Rated</h1>
+      <h1>Upcoming</h1>
     </div>
   </div>
   <div class="row">
-    <ng-container *ngIf="topAnime.length == 0">
+    <ng-container *ngIf="upcomingAnime.length == 0">
       <div class="row">
         <div class="col text-center">
           <img src="loading.gif" style="width: 48px; height: 48px" />
@@ -13,13 +13,12 @@
         </div>
       </div>
     </ng-container>
-    <ng-container *ngFor="let anime of topAnime; let i = index">
+    <ng-container *ngFor="let anime of upcomingAnime; let i = index">
       <div class="col-2 py-2">
         <app-anime-card
           [anime]="anime"
           [title]="true"
-          [episodes]="true"
-          [score]="true"
+          [aired_from]="true"
         ></app-anime-card>
       </div>
     </ng-container>
