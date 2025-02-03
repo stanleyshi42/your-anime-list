@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="anime">
   <div class="row">
     <!-- Left column -->
     <div class="col-3">
@@ -30,7 +30,11 @@
     <!-- Right column -->
     <div class="col-9">
       <div class="row">
-        <h1>{{ anime.title_english }}</h1>
+        <div class="col-auto">
+          <h1 class="p-2 rounded" style="background-color: #60faff">
+            {{ anime.title_english }}
+          </h1>
+        </div>
       </div>
 
       <div class="row">

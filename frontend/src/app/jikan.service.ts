@@ -31,6 +31,6 @@ export class JikanService {
   }
 
   getSearch(query: string): Observable<any> {
-    return this.http.get<any>(this.uri + 'anime?sfw&?q=' + query);
+    return this.http.get<any>(this.uri + 'anime?q=' + query + '&?sfw');
   }
 }

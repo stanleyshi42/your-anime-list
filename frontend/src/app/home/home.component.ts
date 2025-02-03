@@ -8,6 +8,7 @@ import { JikanService } from '../jikan.service';
 })
 export class HomeComponent {
   airingAnime: any = [];
+
   constructor(private jikanService: JikanService) {}
 
   ngOnInit() {

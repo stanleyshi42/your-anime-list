@@ -17,6 +17,7 @@ import {
 import { AnimeCardComponent } from './anime-card/anime-card.component';
 import { UpcomingAnimeComponent } from './upcoming-anime/upcoming-anime.component';
 import { AnimeDetailsComponent } from './anime-details/anime-details.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AnimeDetailsComponent } from './anime-details/anime-details.component';
     AnimeCardComponent,
     UpcomingAnimeComponent,
     AnimeDetailsComponent,
+    SearchComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideHttpClient(withInterceptorsFromDi())],
